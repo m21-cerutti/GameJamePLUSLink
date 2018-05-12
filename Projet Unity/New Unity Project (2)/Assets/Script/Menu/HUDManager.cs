@@ -35,7 +35,9 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	AsyncOperation async;
 	public stateMenu state = stateMenu.Main;
 
-
+	public Texture2D cursorTexture;
+	public CursorMode cursorMode = CursorMode.Auto;
+	public Vector2 hotSpot = Vector2.zero;
 
 	new void Awake()
 	{
@@ -101,6 +103,16 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	/*Scripts button*/
 
+
+	public void cursorChange()
+	{
+		Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+	}
+
+	public void cursorStd()
+	{
+		Cursor.SetCursor(null, Vector2.zero, cursorMode);
+	}
 	//Menu
 
 	public void playDemo()
@@ -111,8 +123,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public void LoadGameScene()
 	{
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Confined;
+		cursorChange();
 		SceneManager.LoadScene(1, LoadSceneMode.Single);
 		state = stateMenu.Play;
 		menuStart.SetActive(false);
@@ -129,9 +140,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public void MenuLoad()
 	{
-		Cursor.visible = true;
-		Cursor.lockState = CursorLockMode.None;
-		ATHPanel.SetActive(false);
+		cursorStd();
 		Time.timeScale = 1f;
 		state = stateMenu.Main;
 		SceneManager.LoadScene(0, LoadSceneMode.Single);
@@ -182,9 +191,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public void Pause()
 	{
-		Cursor.visible = true;
-		Cursor.lockState = CursorLockMode.None;
-
+		cursorStd();
 		Time.timeScale = 0f;
 		state = stateMenu.Pause;
 		pausePanel.SetActive(true);
@@ -192,9 +199,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public void Backpause()
 	{
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Confined;
-
+		cursorChange();
 		Time.timeScale = 1f;
 		state = stateMenu.Play;
 		pausePanel.SetActive(false);
@@ -212,6 +217,8 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 		HUDManager.Instance.GameOverPanel.SetActive(false);
 		state = stateMenu.Play;
 	}
+
+	/*
 	public void Loading()
 	{
 		StartCoroutine(loadingScreen());
@@ -238,8 +245,6 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 				{
 					async.allowSceneActivation = true;
 					LoadingObjects.SetActive(false);
-					Cursor.visible = false;
-					Cursor.lockState = CursorLockMode.Confined;
 					state = stateMenu.Play;
 					menuStart.SetActive(false);
 					ATHPanel.SetActive(true);
@@ -248,6 +253,6 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 			yield return null;
 		}
 	}
-
+	*/
 }
 
