@@ -17,9 +17,9 @@ public class PlayerMotor : CharacterObj {
 		}
 	}
 
-	public void die()
+	public new void die()
 	{
-		destroy();
+		base.die();
 		HUDManager.Instance.GameOver();
 	}
 

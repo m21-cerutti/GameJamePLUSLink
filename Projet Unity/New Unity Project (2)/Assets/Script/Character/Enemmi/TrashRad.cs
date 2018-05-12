@@ -4,31 +4,19 @@ using UnityEngine;
 
 public class TrashRad : CharacterObj {
 
-	public PlayerMotor player = null;
+	public GameObject player = null;
+	public bool follow_player;
 
 	void Update()
 	{
-		if (player != null)
+		if (follow_player && player == null)
+		{
+			player = GameObject.FindGameObjectWithTag("Player");
+		}
+		else if (follow_player)
 		{
 			player.SendMessage("takeDamage", damage);
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		if (col.tag == "Player")
-		{
-			Debug.Log("Detect player");
-			player = col.gameObject.GetComponent<PlayerMotor>();
-		}
-	}
-	
-	void OnTriggerExit2D(Collider2D col)
-	{
-		if (col.tag == "Player")
-		{
-			player = null;
-			Debug.Log("Lost player");
-		}
-	}
 }

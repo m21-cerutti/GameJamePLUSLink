@@ -8,6 +8,17 @@ public abstract class CharacterObj : MonoBehaviour {
 	public int life;
 	public int damage;
 
+	float time_death = 5f;
+	Color startColor;
+	bool start_corout = false;
+
+
+	private void Start()
+	{
+		startColor = this.GetComponent<SpriteRenderer>().color;
+	}
+
+
 	public float ratio()
 	{
 		return (float)(life/ max_life *1f);
@@ -15,12 +26,24 @@ public abstract class CharacterObj : MonoBehaviour {
 
 	public void takeDamage(int dam)
 	{
-		
-		life -= dam;
+		if (life - dam > 0)
+		{
+			life -= dam;
+		}
+		else
+		{
+			destroy();
+			Debug.Log("DestroyObject, is dead.");
+		}
+	}
+
+	public void die() {
+
 	}
 
 	public void destroy()
 	{
-		Destroy(this);
+		Destroy(this.gameObject);
 	}
+
 }
