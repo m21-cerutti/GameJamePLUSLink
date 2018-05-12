@@ -5,7 +5,7 @@ using UnityEngine;
 public class Mutant : CharacterObj {
 
 	
-	Vector2 startPosition;
+	public Vector3 startPosition;
 	public float speed;
 
 
@@ -13,14 +13,14 @@ public class Mutant : CharacterObj {
 	Rigidbody2D rb;
 	public bool follow_player;
 
-	RaycastHit2D hit;
+
+	private Vector3 velocity = Vector3.zero;
 
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		startPosition = transform.position;
-
+		startPosition = this.transform.position;
 	}
 	void Update()
 	{
@@ -32,25 +32,33 @@ public class Mutant : CharacterObj {
 		{
 			Debug.Log("follow");
 			Vector2 movedir = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
-			computePathFinding();
-			//rb.velocity = .normalized * speed;
+			Vector2 aimed = computePathFinding();
+			rb.velocity = aimed * speed;
+		}
+		else if (!follow_player)
+		{
+			rb.velocity = Vector3.SmoothDamp(rb.velocity, Vector3.zero, ref velocity, 0.3f);
 		}
 	}
 
 	Vector2 computePathFinding()
 	{
 		//Choisis que le layer 8
-		LayerMask layerMask = 1 << 9;
+		LayerMask layerMask = 1 << 9 | 1<<8;
 		//Inverse
 		//layerMask = ~layerMask;
 		//Debug.DrawLine(player.transform.position, transform.position,  Color.green, Time.deltaTime, false);
+
+		Vector2 bestPoint = Vector2.zero;
 		RaycastHit2D hit = Physics2D.Linecast(transform.position, player.transform.position, layerMask );
 		if (hit.collider != null)
 		{
-			Debug.Log("hit "+hit.collider.gameObject.name);
+			Debug.Log("hit " + hit.collider.gameObject.name);
 			Debug.DrawLine(transform.position, hit.point, Color.green, Time.deltaTime, false);
+			bestPoint = hit.point;
 		}
-		return Vector2.zero;
+		Debug.DrawLine(transform.position, bestPoint, Color.red, Time.deltaTime, false);
+		return new Vector2(bestPoint.x- transform.position.x, bestPoint.y - transform.position.y).normalized;
 	}
 
 	void OnCollisionEnter2D(Collision2D coll)
