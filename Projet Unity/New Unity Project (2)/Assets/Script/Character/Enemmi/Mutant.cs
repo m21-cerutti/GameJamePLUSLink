@@ -29,8 +29,7 @@ public class Mutant : EnemyClass{
 		}
 		else if (follow_player)
 		{
-			Debug.Log("follow");
-			Vector2 movedir = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
+			//Debug.Log("follow");
 			Vector2 aimed = computePathFinding();
 			rb.velocity = aimed * speed;
 		}

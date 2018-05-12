@@ -8,14 +8,14 @@ public abstract class CharacterObj : MonoBehaviour {
 	public int life;
 	public int damage;
 
-	float time_death = 5f;
-	Color startColor;
-	bool start_corout = false;
+	//float time_death = 5f;
+	//Color startColor;
+	//bool start_corout = false;
 
 
 	private void Start()
 	{
-		startColor = this.GetComponent<SpriteRenderer>().color;
+		//startColor = this.GetComponent<SpriteRenderer>().color;
 	}
 
 

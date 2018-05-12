@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour {
+public class CameraMotor : MonoBehaviour {
 
 	#region Editor
 	[SerializeField]
@@ -32,7 +32,6 @@ public class CameraController : MonoBehaviour {
 
 	void Start()
 	{
-		_player = GameObject.FindGameObjectWithTag("Player");
 		freeCamera = false ;
 
 	}
@@ -47,19 +46,22 @@ public class CameraController : MonoBehaviour {
 			//Debug.Log("test" + GetComponent<Camera>().gameObject.name);
 			float trslty = Mathf.SmoothDamp(0f, _player.transform.position.y - transform.position.y , ref _yVelocity, _smoothTimeY);
 			float trsltx = Mathf.SmoothDamp(0f, _player.transform.position.x - transform.position.x, ref _xVelocity, _smoothTimeX);
-			/*
+
 			if ((_player.transform.position.y > heightDown && _player.transform.position.y < heightUp) ||( transform.position.y > heightDown && transform.position.y < heightUp) )
-			{*/
+			{
 
 				transform.Translate(new Vector3(trsltx, trslty, 0f));
 
-			/*}
+			}
 			else
 			{
 				
 				transform.Translate(new Vector3(trsltx, 0f, 0f));
 				
-			}*/
+			}
 		}
 	}
+
+	
+	
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class TextDisplay : MonoBehaviour
+public class TextDisplay : SingletonBehaviour<TextDisplay>
 {
 	public Text dialogueText;
 
@@ -23,24 +23,20 @@ public class TextDisplay : MonoBehaviour
 	{
 		foreach(string sentence in dialogue.sentences)
 		{
-			StartCoroutine(TypeSentence(sentence));
+			foreach (char c in sentence)
+			{
+				dialogueText.text += c;
+				yield return new WaitForSeconds(0.03f);
+			}
 			yield return new WaitForSeconds(1f);
 			dialogueText.text += '\n';
 		}
 	}
 
-	IEnumerator TypeSentence(string sentence)
-	{
-		foreach(char c in sentence)
-		{
-			dialogueText.text += c;
-			yield return null;
-			yield return null;
-		}
-	}
 
 	void EndDialogue()
 	{
+		dialogueText.text = "";
 		return;
 	}
 }
