@@ -99,7 +99,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	public void LoadGameScene()
 	{
 		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.lockState = CursorLockMode.Confined;
 		SceneManager.LoadScene(1, LoadSceneMode.Single);
 		state = stateMenu.Play;
 		menuStart.SetActive(false);
@@ -173,7 +173,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	public void Backpause()
 	{
 		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.lockState = CursorLockMode.Confined;
 
 		Time.timeScale = 1f;
 		state = stateMenu.Play;
