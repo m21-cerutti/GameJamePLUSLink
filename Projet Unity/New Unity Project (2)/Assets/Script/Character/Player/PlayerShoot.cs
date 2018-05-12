@@ -3,6 +3,7 @@
 public class PlayerShoot : MonoBehaviour
 {
 	public GameObject bullet;
+	public float speed = 10f;
 
 	private bool shoot;
 	
@@ -24,7 +25,7 @@ public class PlayerShoot : MonoBehaviour
 
 	void Shoot()
 	{
-		Instantiate(bullet, transform.position + bullet.transform.position, Quaternion.LookRotation(Input.mousePosition));
+		Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>().velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * speed;
 		Debug.Log("Shoot !");
 	}
 }
