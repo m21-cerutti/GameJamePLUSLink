@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TrashRad : CharacterObj {
 
-	public PlayerMotor player;
+	public PlayerMotor player = null;
 
 	void Update()
 	{
 		if (player != null)
 		{
-			player.life -= damage;
+			player.life -= (int)(damage * Time.deltaTime);
 		}
 	}
 
