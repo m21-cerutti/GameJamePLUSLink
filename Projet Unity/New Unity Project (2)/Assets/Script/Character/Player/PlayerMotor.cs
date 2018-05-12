@@ -9,7 +9,7 @@ public class PlayerMotor : CharacterObj {
 
 	public new void takeDamage(int dam)
 	{
-		Debug.Log(this.gameObject.name + " " + life);
+		//Debug.Log(this.gameObject.name + " " + life);
 		if (timeinv < 0 )
 		{
 			base.takeDamage(dam);
