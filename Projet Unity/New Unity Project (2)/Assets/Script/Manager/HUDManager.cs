@@ -28,7 +28,6 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public Button[] buttonMain;
 	public Button[] buttonPause;
-	public Button[] buttonGameOver;
 
 	public stateMenu state = stateMenu.Main;
 
@@ -48,26 +47,26 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 		if (state == stateMenu.Main)
 		{
-			if (Input.GetButtonDown("Escape"))
+			if (Input.GetButtonDown("Cancel"))
 			{
 				quitGame();
 			}
 		}
-		else if (state == stateMenu.Tutorial && Input.GetButtonDown("Escape"))
+		else if (state == stateMenu.Tutorial && Input.GetButtonDown("Cancel"))
 		{
 			Backtutorial();
 		}
-		else if (state == stateMenu.Credit && Input.GetButtonDown("Escape"))
+		else if (state == stateMenu.Credit && Input.GetButtonDown("Cancel"))
 		{
 			Backcredits();
 		}
-		else if (state == stateMenu.Play && Input.GetButtonDown("Escape"))
+		else if (state == stateMenu.Play && Input.GetButtonDown("Cancel"))
 		{
-			pause();
+			Pause();
 		}
 		else if (state == stateMenu.Pause)
 		{
-			if (Input.GetButtonDown("Escape"))
+			if (Input.GetButtonDown("Cancel"))
 			{
 				Backpause();
 			}
@@ -76,14 +75,14 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 		{
 			if (Input.anyKeyDown)
 			{
-				menuLoad();
+				MenuLoad();
 			}
 		}
 		else if (state == stateMenu.Win)
 		{
 			if (Input.anyKeyDown)
 			{
-				menuLoad();
+				MenuLoad();
 			}
 		}
 	}
@@ -103,15 +102,16 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 		Cursor.lockState = CursorLockMode.Locked;
 		SceneManager.LoadScene(1, LoadSceneMode.Single);
 		state = stateMenu.Play;
-		
+		menuStart.SetActive(false);
+		ATHPanel.SetActive(true);
 
 	}
 
-	public void menuLoad()
+	public void MenuLoad()
 	{
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
-
+		ATHPanel.SetActive(false);
 		Time.timeScale = 1f;
 		state = stateMenu.Main;
 		SceneManager.LoadScene(0, LoadSceneMode.Single);
@@ -131,7 +131,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	//Credits
 
-	public void credits()
+	public void Credits()
 	{
 		state = stateMenu.Credit;
 		CreditPanel.SetActive(true);
@@ -145,7 +145,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	//Tutorial
 
-	public void tutorial()
+	public void Tutorial()
 	{
 		state = stateMenu.Tutorial;
 		TutorialPanel.SetActive(true);
@@ -160,7 +160,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	//Pause
 
-	public void pause()
+	public void Pause()
 	{
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
