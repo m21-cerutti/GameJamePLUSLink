@@ -5,12 +5,15 @@ public class PlayerShoot : MonoBehaviour
 	public GameObject bullet;
 	public float speed = 10f;
 
-	private bool shoot;
-	
-	void Start ()
+	public enum Weapons
 	{
-		
-	}
+		MP5,
+		MachineGun,
+		RocketLauncher,
+		C4
+	};
+
+	private bool shoot;
 	
 	void Update ()
 	{
@@ -26,6 +29,5 @@ public class PlayerShoot : MonoBehaviour
 	void Shoot()
 	{
 		Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>().velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * speed;
-		Debug.Log("Shoot !");
 	}
 }
