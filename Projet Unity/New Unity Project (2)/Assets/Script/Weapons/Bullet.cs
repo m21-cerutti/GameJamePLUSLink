@@ -2,10 +2,12 @@
 
 public class Bullet : MonoBehaviour
 {
+	public float speed = 10f;
+	public float damage = 2f;
 
 	void Start()
 	{
-		
+		GetComponent<Rigidbody2D>().velocity = (Vector2)Input.mousePosition.normalized * speed;
 	}
 
 	void FixedUpdate()
@@ -13,8 +15,12 @@ public class Bullet : MonoBehaviour
 		
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		Destroy(gameObject);
+		if (other.tag != "Player")
+		{
+			other.SendMessage("takeDamage", damage);
+			Destroy(this);
+		}
 	}
 }
