@@ -21,7 +21,7 @@ public abstract class CharacterObj : MonoBehaviour {
 
 	public float ratio()
 	{
-		return (float)(life/ max_life *1f);
+		return (float)(life * 1f / max_life);
 	}
 
 	public void takeDamage(int dam)
