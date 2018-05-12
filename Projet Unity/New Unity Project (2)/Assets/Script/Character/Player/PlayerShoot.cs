@@ -24,7 +24,7 @@ public class PlayerShoot : MonoBehaviour
 
 	void Shoot()
 	{
-		Instantiate(bullet, transform.position, Quaternion.LookRotation(Input.mousePosition));
+		Instantiate(bullet, transform.position + bullet.transform.position, Quaternion.LookRotation(Input.mousePosition));
 		Debug.Log("Shoot !");
 	}
 }
