@@ -24,7 +24,7 @@ public class PlayerShoot : MonoBehaviour
 
 	void Shoot()
 	{
-		Instantiate(bullet, transform.position, Quaternion.LookRotation(Input.mousePosition));
+		Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>().velocity = new Vector2(Input.mousePosition.x, Input.mousePosition.y).normalized;
 		Debug.Log("Shoot !");
 	}
 }
