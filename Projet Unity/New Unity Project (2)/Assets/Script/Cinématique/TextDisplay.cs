@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,50 +8,38 @@ public class TextDisplay : MonoBehaviour
 {
 	public Text dialogueText;
 
-	private Queue<string> sentences;
-
 	void Start ()
 	{
-		sentences = new Queue<string>();
+		dialogueText.text = "";
 	}
 
 	public void startDialogue(Dialogue dialogue)
 	{
-		sentences.Clear();
+		StartCoroutine(DisplaySentences(dialogue));
+	}
 
+	IEnumerator DisplaySentences(Dialogue dialogue)
+	{
 		foreach(string sentence in dialogue.sentences)
 		{
-			sentences.Enqueue(sentence);
+			StartCoroutine(TypeSentence(sentence));
+			yield return new WaitForSeconds(1f);
+			dialogueText.text += '\n';
 		}
-
-		DisplayNextSentence();
 	}
 
-	public void DisplayNextSentence()
+	IEnumerator TypeSentence(string sentence)
 	{
-		if(sentences.Count == 0)
-		{
-			EndDialogue();
-			return;
-		}
-
-		string sentence = sentences.Dequeue();
-		StopAllCoroutines();
-		StartCoroutine(TypeSentence(sentence));
-	}
-
-	IEnumerator<string> TypeSentence(string sentence)
-	{
-		dialogueText.text = "";
-		foreach(char c in sentence.ToCharArray())
+		foreach(char c in sentence)
 		{
 			dialogueText.text += c;
+			yield return null;
 			yield return null;
 		}
 	}
 
 	void EndDialogue()
 	{
-
+		return;
 	}
 }

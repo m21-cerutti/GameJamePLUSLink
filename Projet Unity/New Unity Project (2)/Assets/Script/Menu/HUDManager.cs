@@ -14,7 +14,8 @@ public enum stateMenu
 	Play,
 	Credit,
 	GameOver,
-	Win
+	Win,
+	Cinematique
 }
 public class HUDManager : SingletonBehaviour<HUDManager>
 {
@@ -88,6 +89,14 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 				MenuLoad();
 			}
 		}
+		else if (state == stateMenu.Cinematique)
+		{
+			if (Input.anyKeyDown)
+			{
+				LoadingObjects.SetActive(false);
+				LoadGameScene();
+			}
+		}
 	}
 
 	/*Scripts button*/
@@ -97,7 +106,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	public void playDemo()
 	{
 		//LoadGameScene();
-		Loading();
+		PlayCinematique();
 	}
 
 	public void LoadGameScene()
@@ -109,6 +118,13 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 		menuStart.SetActive(false);
 		ATHPanel.SetActive(true);
 
+	}
+
+	public void PlayCinematique()
+	{
+		LoadingObjects.SetActive(true);
+		state = stateMenu.Cinematique;
+		buttonMain[0].GetComponent<DialogueTrigger>().dialogueTrigger();
 	}
 
 	public void MenuLoad()
