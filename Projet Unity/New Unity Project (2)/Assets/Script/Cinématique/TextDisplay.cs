@@ -15,6 +15,7 @@ public class TextDisplay : MonoBehaviour
 
 	public void startDialogue(Dialogue dialogue)
 	{
+		dialogueText.text = "";
 		StartCoroutine(DisplaySentences(dialogue));
 	}
 

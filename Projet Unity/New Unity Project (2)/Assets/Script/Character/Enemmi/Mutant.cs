@@ -13,7 +13,7 @@ public class Mutant : EnemyClass{
 
 
 	private Vector3 velocity = Vector3.zero;
-
+	
 
 	void Start()
 	{

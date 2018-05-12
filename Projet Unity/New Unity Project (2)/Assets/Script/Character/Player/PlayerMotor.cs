@@ -17,9 +17,8 @@ public class PlayerMotor : CharacterObj {
 		}
 	}
 
-	public new void die()
+	public override void die()
 	{
-		base.die();
 		HUDManager.Instance.GameOver();
 	}
 

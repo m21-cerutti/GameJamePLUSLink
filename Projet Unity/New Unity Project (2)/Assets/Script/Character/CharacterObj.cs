@@ -32,14 +32,11 @@ public abstract class CharacterObj : MonoBehaviour {
 		}
 		else
 		{
-			destroy();
-			Debug.Log("DestroyObject, is dead.");
+			die();
 		}
 	}
 
-	public void die() {
-
-	}
+	public abstract void die();
 
 	public void destroy()
 	{

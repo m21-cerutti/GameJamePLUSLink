@@ -8,6 +8,11 @@ public class EnemyClass : CharacterObj{
 	public bool follow_player;
 	public GameObject barlife;
 
+	public override void die()
+	{
+		destroy();
+	}
+
 	void Update()
 	{
 		barlife.transform.localScale = new Vector3(ratio(), barlife.transform.localScale.y, barlife.transform.localScale.z);

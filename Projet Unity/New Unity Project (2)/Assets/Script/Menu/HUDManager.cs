@@ -145,7 +145,9 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 		state = stateMenu.Main;
 		SceneManager.LoadScene(0, LoadSceneMode.Single);
 		menuStart.SetActive(true);
+		ATHPanel.SetActive(false);
 		pausePanel.SetActive(false);
+		GameOverPanel.SetActive(false);
 		
 		Time.timeScale = 1f;
 		
