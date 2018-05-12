@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212305072779205302}
   - component: {fileID: 50494588393229892}
   - component: {fileID: 58667820649161624}
-  - component: {fileID: 114204132488230552}
+  - component: {fileID: 114019175039551028}
   m_Layer: 10
   m_Name: Trash
   m_TagString: Enemy
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
---- !u!114 &114204132488230552
+--- !u!114 &114019175039551028
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1148801914654788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cd05043a1c26a841b955911e2b28061, type: 3}
+  m_Script: {fileID: 11500000, guid: a44480bb21ab9254f8ae4cc25c36c2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   max_life: 20

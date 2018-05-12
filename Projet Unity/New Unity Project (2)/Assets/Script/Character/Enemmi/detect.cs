@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class detect : MonoBehaviour {
 
-	Mutant parent;
+	EnemyClass parent;
 
 	void Start()
 	{
-		parent = GetComponentInParent<Mutant>();
+		parent = GetComponentInParent<EnemyClass>();
 	}
 
 	void OnTriggerEnter2D(Collider2D col)

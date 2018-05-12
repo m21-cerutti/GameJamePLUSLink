@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashRad : CharacterObj {
+public class EnemyClass : CharacterObj{
 
 	public GameObject player = null;
 	public bool follow_player;
@@ -18,5 +18,4 @@ public class TrashRad : CharacterObj {
 			player.SendMessage("takeDamage", damage);
 		}
 	}
-
 }
