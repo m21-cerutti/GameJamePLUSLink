@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerMotor : CharacterObj {
 
-
 	public float invulnerability;
+	float timeinv;
 
 	public new void takeDamage(int dam)
 	{
-		if (invulnerability > 0)
+		Debug.Log(this.gameObject.name + " " + life);
+		if (timeinv < 0 )
 		{
 			base.takeDamage(dam);
-			invulnerability = 3f;
+			timeinv = invulnerability;
 		}
 	}
 
@@ -30,7 +31,7 @@ public class PlayerMotor : CharacterObj {
 	void Update () {
 		if (invulnerability > 0)
 		{
-			invulnerability -= Time.deltaTime;
+			timeinv -= Time.deltaTime;
 		}
 	}
 }

@@ -2,32 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashRad : CharacterObj {
+public class detect : MonoBehaviour {
 
-	public PlayerMotor player = null;
+	Mutant parent;
 
-	void Update()
+	void Start()
 	{
-		if (player != null)
-		{
-			player.SendMessage("takeDamage", damage);
-		}
+		parent = GetComponentInParent<Mutant>();
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.tag == "Player")
 		{
+			parent.player = col.gameObject;
+			parent.follow_player = true;
 			Debug.Log("Detect player");
-			player = col.gameObject.GetComponent<PlayerMotor>();
 		}
 	}
-	
+
 	void OnTriggerExit2D(Collider2D col)
 	{
 		if (col.tag == "Player")
 		{
-			player = null;
+			parent.follow_player = false;
 			Debug.Log("Lost player");
 		}
 	}

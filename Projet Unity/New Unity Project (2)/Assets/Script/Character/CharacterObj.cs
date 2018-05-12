@@ -15,6 +15,7 @@ public abstract class CharacterObj : MonoBehaviour {
 
 	public void takeDamage(int dam)
 	{
+		
 		life -= dam;
 	}
 
