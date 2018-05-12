@@ -16,7 +16,7 @@ public class TrashRad : CharacterObj {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.name == "Player")
+		if (col.tag == "Player")
 		{
 			player = col.gameObject.GetComponent<PlayerMotor>();
 		}
@@ -24,7 +24,7 @@ public class TrashRad : CharacterObj {
 	
 	void OnTriggerExit2D(Collider2D col)
 	{
-		if (col.name == "Player")
+		if (col.tag == "Player")
 		{
 			player = null;
 		}
