@@ -4,17 +4,21 @@ public class Bullet : MonoBehaviour
 {
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if(other.collider.tag == "Enemy")
-			other.collider.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-		bulletDamage(other.collider, 2f);
+		foreach (ContactPoint2D con in other.contacts)
+		{
+			if (other.collider.tag == "Enemy")
+				other.collider.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+				bulletDamage(other.collider, 2f);
+		}
 		Destroy(gameObject);
-	}
 
+	}
+	/*
 	private void OnBecameInvisible()
 	{
 		Destroy(gameObject);
 	}
-
+	*/
 	void bulletDamage(Collider2D other, float damage)
 	{
 		if(other.tag == "Enemy")

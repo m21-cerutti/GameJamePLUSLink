@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mutant : CharacterObj {
+public class Mutant : EnemyClass{
 
 	
 	public Vector3 startPosition;
 	public float speed;
 
 
-	public GameObject player;
 	Rigidbody2D rb;
-	public bool follow_player;
 
 
 	private Vector3 velocity = Vector3.zero;

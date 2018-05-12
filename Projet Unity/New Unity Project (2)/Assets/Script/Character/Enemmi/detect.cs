@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class detect : MonoBehaviour {
 
-	Mutant parent;
+	EnemyClass parent;
 
 	void Start()
 	{
-		parent = GetComponentInParent<Mutant>();
+		parent = GetComponentInParent<EnemyClass>();
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -17,7 +17,7 @@ public class detect : MonoBehaviour {
 		{
 			parent.player = col.gameObject;
 			parent.follow_player = true;
-			Debug.Log("Detect player");
+			//Debug.Log("Detect player");
 		}
 	}
 
@@ -26,7 +26,7 @@ public class detect : MonoBehaviour {
 		if (col.tag == "Player")
 		{
 			parent.follow_player = false;
-			Debug.Log("Lost player");
+			//Debug.Log("Lost player");
 		}
 	}
 }
