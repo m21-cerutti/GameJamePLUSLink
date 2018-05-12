@@ -22,6 +22,7 @@ public class Mutant : EnemyClass{
 	}
 	void Update()
 	{
+		barlife.transform.localScale = new Vector3(ratio(), barlife.transform.localScale.y, barlife.transform.localScale.z);
 		if (follow_player && player == null)
 		{
 			player = GameObject.FindGameObjectWithTag("Player");

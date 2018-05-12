@@ -25,10 +25,13 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	public GameObject TutorialPanel;
 	public GameObject GameOverPanel;
 	public GameObject CreditPanel;
+	public GameObject LoadingObjects;
+	
 
 	public Button[] buttonMain;
 	public Button[] buttonPause;
 
+	AsyncOperation async;
 	public stateMenu state = stateMenu.Main;
 
 
@@ -93,7 +96,8 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public void playDemo()
 	{
-		LoadGameScene();
+		//LoadGameScene();
+		Loading();
 	}
 
 	public void LoadGameScene()
@@ -191,6 +195,42 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	{
 		HUDManager.Instance.GameOverPanel.SetActive(false);
 		state = stateMenu.Play;
+	}
+	public void Loading()
+	{
+		StartCoroutine(loadingScreen());
+	}
+	IEnumerator loadingScreen()
+	{
+		LoadingObjects.SetActive(true);
+		async = SceneManager.LoadSceneAsync(1);
+		async.allowSceneActivation = false;
+		while (async.isDone == false)
+		{
+			// [0, 0.9] > [0, 1]
+			float progress = Mathf.Clamp01(async.progress / 0.9f);
+			Debug.Log("Loading progress: " + (progress * 100) + "%");
+
+			LoadingObjects.GetComponent<DialogueTrigger>().dialogueTrigger();
+
+
+			// Loading completed
+			if (async.progress == 0.9f)
+			{
+				Debug.Log("Press a key to start");
+				if (Input.anyKeyDown)
+				{
+					async.allowSceneActivation = true;
+					LoadingObjects.SetActive(false);
+					Cursor.visible = false;
+					Cursor.lockState = CursorLockMode.Confined;
+					state = stateMenu.Play;
+					menuStart.SetActive(false);
+					ATHPanel.SetActive(true);
+				}
+			}
+			yield return null;
+		}
 	}
 
 }
