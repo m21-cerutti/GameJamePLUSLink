@@ -1631,8 +1631,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - Bonjour les gens,
-    - Comment allez-vous ?
+    - '13 mai 2054
+
+      Jour 247
+
+'
+    - "Mon groupe \xE9lectrog\xE8ne est mort. Me reste que des batteries. Je tiendrai
+      pas plus de quelques jours.\n"
+    - "ELLE EST PR\xCATE ?! ELLE EST PR\xCATE ?!\n"
+    - "Mon invention va r\xE9volutionner le monde ! Ils cesseront de dire que je suis
+      timbr\xE9 !\n"
+    - 'JE DOIS LA TESTER. JE DOIS LA TESTER.
+
+'
+    - "Je sais que c'est un risque d'\xEAtre aussi pr\xE8s du site. Mais je dois rester
+      pour mes recherches sur la d\xE9contamination. Je dois nettoyer ce bordel.\n"
+    - 'JEDOISLATESTERJEDOISLATESTERJEDOISLATESTERDOISLATESTERDOISLATESTERDOISLATESTERLATESTERLATESTERLATESTERTESTERTESTERTESTER
+
+'
+    - MAINTENANT.
 --- !u!114 &114267055621891186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1913,10 +1930,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 142
+    m_FontSize: 38
     m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
+    m_BestFit: 0
+    m_MinSize: 3
     m_MaxSize: 142
     m_Alignment: 0
     m_AlignByGeometry: 0
