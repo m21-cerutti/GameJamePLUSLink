@@ -56,6 +56,10 @@ MonoBehaviour:
     type: 2}
   audioNoisePrefab: {fileID: 1039502425279430, guid: 922fd40f59f4f6c4b9e7c6c51fdc1831,
     type: 2}
+  audioNoisePrefab_gun: {fileID: 1039502425279430, guid: a8e4bf86a7efd164fa1b3264106c7906,
+    type: 2}
+  audioNoisePrefab_player: {fileID: 1039502425279430, guid: 6e3c9f9a5fa2d9b408b9a4a87abd894e,
+    type: 2}
   win: 0
   MainMenu: {fileID: 8300000, guid: 286c1499d84932343a03a35363cca834, type: 3}
   Game: {fileID: 8300000, guid: ccfaaab917f1d4d49b37d540fb48da64, type: 3}
@@ -64,3 +68,31 @@ MonoBehaviour:
     important: 0
   - clip: {fileID: 8300000, guid: c2429f2aa8fc98d42aad30f6cf4f3bb7, type: 3}
     important: 1
+  - clip: {fileID: 8300000, guid: 0ef2214b821da4f4190ecbd78521ed9e, type: 3}
+    important: 1
+  - clip: {fileID: 8300000, guid: 3f99c7c73cc2acf4c96851837c9c4d0c, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: 2f0a9c974381a1543be18e03f2094b1b, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: c8fb3c6b977bd7446a80eaf3f16abcfa, type: 3}
+    important: 1
+  - clip: {fileID: 8300000, guid: 4612ba7d5fe492b48946e96d9f85bf74, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: 42f07ac7e44f7c44aa16c951d29284f5, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: 15c835535af4f2240a8acf905bbcb876, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: 164d0e1f082bfec4395a4a681b62dd86, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: ebdbb8bd5b7a36b419a2ac9d42137535, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: c3773a078637bc444a5b091ebbd0a086, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: 34fc62a46ece450488f307d00dd2629b, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: cda097952e27ea24188be4326f2af4c8, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: 21a0800ed3d5f34438ac304cca5aacbb, type: 3}
+    important: 0
+  - clip: {fileID: 8300000, guid: a6330e924a091a849ae33cbf18e6a2e1, type: 3}
+    important: 0
