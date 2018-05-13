@@ -64,7 +64,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4005888975692940
 Transform:
   m_ObjectHideFlags: 1
@@ -208,8 +208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1698389398447348, guid: 69d1c15613bce78439e48196f9ccd15c, type: 2}
-  speed: 6
+  rocket: {fileID: 1698389398447348, guid: 2ad3186f70a4a3b43a4a31fb4d99642d, type: 2}
+  speed: 8
+  speedRocket: 6
   cadence: 0.3
+  cadenceRocket: 1
 --- !u!114 &114884618548518048
 MonoBehaviour:
   m_ObjectHideFlags: 1
