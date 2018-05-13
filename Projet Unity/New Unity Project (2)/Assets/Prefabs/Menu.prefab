@@ -1569,7 +1569,7 @@ MonoBehaviour:
   ATHPanel: {fileID: 1570207592423774}
   TutorialPanel: {fileID: 1154667423730400}
   GameOverPanel: {fileID: 1558278963204766}
-  WinPanel: {fileID: 0}
+  WinPanel: {fileID: 1411073640722848}
   CreditPanel: {fileID: 1573150902908436}
   LoadingObjects: {fileID: 1655548724206452}
   buttonMain:
