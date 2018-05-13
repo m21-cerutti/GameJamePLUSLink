@@ -71,7 +71,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 0ef2214b821da4f4190ecbd78521ed9e, type: 3}
     important: 1
   - clip: {fileID: 8300000, guid: 3f99c7c73cc2acf4c96851837c9c4d0c, type: 3}
-    important: 0
+    important: 1
   - clip: {fileID: 8300000, guid: a9309a4abfbbacd4598dadc71be57c1a, type: 3}
     important: 1
   - clip: {fileID: 8300000, guid: 7d9550ad8b938f74bb770e621aa9ff6b, type: 3}
@@ -87,14 +87,14 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: ebdbb8bd5b7a36b419a2ac9d42137535, type: 3}
     important: 0
   - clip: {fileID: 8300000, guid: c3773a078637bc444a5b091ebbd0a086, type: 3}
-    important: 0
+    important: 1
   - clip: {fileID: 8300000, guid: 34fc62a46ece450488f307d00dd2629b, type: 3}
-    important: 0
+    important: 1
   - clip: {fileID: 8300000, guid: cda097952e27ea24188be4326f2af4c8, type: 3}
-    important: 0
+    important: 1
   - clip: {fileID: 8300000, guid: 21a0800ed3d5f34438ac304cca5aacbb, type: 3}
-    important: 0
+    important: 1
   - clip: {fileID: 8300000, guid: a6330e924a091a849ae33cbf18e6a2e1, type: 3}
-    important: 0
+    important: 1
   - clip: {fileID: 8300000, guid: e821388a67460044eba4ceeac5e67abb, type: 3}
-    important: 0
+    important: 1
