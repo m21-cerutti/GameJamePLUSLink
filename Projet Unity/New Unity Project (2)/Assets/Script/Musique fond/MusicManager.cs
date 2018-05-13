@@ -30,7 +30,7 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 
 	public void playNoise(int nb)
 	{
-		if (audioNoise !=null && (!audioNoise.isPlaying || (priority == false && Noises[nb].important)))
+		if (audioNoise !=null && (!audioNoise.isPlaying || Noises[nb].important))
 		{
 			audioNoise.clip = Noises[nb].clip;
 			audioNoise.Play();

@@ -35,6 +35,7 @@ public class TextDisplay : SingletonBehaviour<TextDisplay>
 			{
 				dialogueText.text += c;
 				float waitc = Random.Range(0.03f, 0.08f);
+				MusicManager.Instance.playNoise(1);
 				yield return new WaitForSeconds(waitc);
 			}
 			float waits = Random.Range(1f, 2f);
