@@ -68,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 1560790822982298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.146, z: 1}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4078424306281586}
   m_RootOrder: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   isRocket: 1
-  radius: 2
+  radius: 1.5
   Explosion: {fileID: 1560790822982298}
 --- !u!212 &212539732911649404
 SpriteRenderer:
