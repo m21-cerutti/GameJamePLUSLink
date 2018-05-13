@@ -8,13 +8,14 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 {
 
 	public GameObject audioFondPrefab;
-	
 	public GameObject audioNoisePrefab;
 	public GameObject audioNoisePrefab_gun;
 	public GameObject audioNoisePrefab_player;
 
 	AudioSource audioFond;
 	AudioSource audioNoise;
+	AudioSource audioNoise_gun;
+	AudioSource audioNoise_player;
 	public bool win;
 
 	public AudioClip MainMenu;
@@ -42,19 +43,19 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 
 	public void playNoise_gun(int nb)
 	{
-		if (audioNoise != null && (!audioNoise.isPlaying || Noises[nb].important))
+		if (audioNoise_gun != null && (!audioNoise_gun.isPlaying || Noises[nb].important))
 		{
-			audioNoise.clip = Noises[nb].clip;
-			audioNoise.Play();
+			audioNoise_gun.clip = Noises[nb].clip;
+			audioNoise_gun.Play();
 		}
 	}
 
 	public void playNoise_player(int nb)
 	{
-		if (audioNoise != null && (!audioNoise.isPlaying || Noises[nb].important))
+		if (audioNoise_player != null && (!audioNoise.isPlaying || Noises[nb].important))
 		{
-			audioNoise.clip = Noises[nb].clip;
-			audioNoise.Play();
+			audioNoise_player.clip = Noises[nb].clip;
+			audioNoise_player.Play();
 		}
 	}
 
@@ -76,14 +77,14 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 
 		if (!GameObject.Find("AudioNoise_gun(Clone)"))
 		{
-			audioNoise = Instantiate(audioNoisePrefab_gun).GetComponent<AudioSource>();
-			audioNoise.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
+			audioNoise_gun = Instantiate(audioNoisePrefab_gun).GetComponent<AudioSource>();
+			audioNoise_gun.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
 		}
 
 		if (!GameObject.Find("AudioNoise_player(Clone)"))
 		{
-			audioNoise = Instantiate(audioNoisePrefab_player).GetComponent<AudioSource>();
-			audioNoise.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
+			audioNoise_player = Instantiate(audioNoisePrefab_player).GetComponent<AudioSource>();
+			audioNoise_player.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
 		}
 
 		audioFond.PlayDelayed(0.3f);
@@ -96,6 +97,20 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 		{
 			audioNoise = Instantiate(audioNoisePrefab).GetComponent<AudioSource>();
 			audioNoise.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
+
+		}
+
+		if (audioNoise_gun == null)
+		{
+			audioNoise_gun = Instantiate(audioNoisePrefab).GetComponent<AudioSource>();
+			audioNoise_gun.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
+
+		}
+
+		if (audioNoise_player == null)
+		{
+			audioNoise_player = Instantiate(audioNoisePrefab).GetComponent<AudioSource>();
+			audioNoise_player.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
 
 		}
 
