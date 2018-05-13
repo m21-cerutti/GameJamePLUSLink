@@ -24,7 +24,7 @@ public class Mutant : EnemyClass{
 	public override void die()
 	{
 		base.die();
-		if(Random.Range(0, 4) == 0)
+		if(Random.Range(0, 6) == 0)
 			Instantiate(itemRocket, transform.position, Quaternion.identity);
 		MusicManager.Instance.playNoise(0);
 	}

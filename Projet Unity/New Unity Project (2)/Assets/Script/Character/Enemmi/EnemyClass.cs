@@ -10,6 +10,7 @@ public class EnemyClass : CharacterObj{
 
 	public override void die()
 	{
+		PlayerMotor.nbEnemies--;
 		destroy();
 	}
 
