@@ -20,6 +20,13 @@ public class Mutant : EnemyClass{
 		rb = GetComponent<Rigidbody2D>();
 		startPosition = this.transform.position;
 	}
+
+	public override void die()
+	{
+		base.die();
+		MusicManager.Instance.playNoise(0);
+	}
+
 	void Update()
 	{
 		barlife.transform.localScale = new Vector3(ratio(), barlife.transform.localScale.y, barlife.transform.localScale.z);

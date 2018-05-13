@@ -7,7 +7,8 @@ public class Bullet : MonoBehaviour
 		foreach (ContactPoint2D con in other.contacts)
 		{
 			if (other.collider.tag == "Enemy")
-				other.collider.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+				if (other.collider.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Static)
+					other.collider.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 				bulletDamage(other.collider, 2f);
 		}
 		Destroy(gameObject);

@@ -37,15 +37,15 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public Texture2D cursorTexture;
 	public CursorMode cursorMode = CursorMode.Auto;
-	public Vector2 hotSpot = Vector2.zero;
+	public Vector2 hotSpot;
 
 	new void Awake()
 	{
 		base.Awake();
 
 		state = stateMenu.Main;
+		hotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
 
-		
 	}
 
 	void Update()
