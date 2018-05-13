@@ -72,9 +72,9 @@ MonoBehaviour:
     important: 1
   - clip: {fileID: 8300000, guid: 3f99c7c73cc2acf4c96851837c9c4d0c, type: 3}
     important: 0
-  - clip: {fileID: 8300000, guid: 2f0a9c974381a1543be18e03f2094b1b, type: 3}
-    important: 0
-  - clip: {fileID: 8300000, guid: c8fb3c6b977bd7446a80eaf3f16abcfa, type: 3}
+  - clip: {fileID: 8300000, guid: a9309a4abfbbacd4598dadc71be57c1a, type: 3}
+    important: 1
+  - clip: {fileID: 8300000, guid: 7d9550ad8b938f74bb770e621aa9ff6b, type: 3}
     important: 1
   - clip: {fileID: 8300000, guid: 4612ba7d5fe492b48946e96d9f85bf74, type: 3}
     important: 0

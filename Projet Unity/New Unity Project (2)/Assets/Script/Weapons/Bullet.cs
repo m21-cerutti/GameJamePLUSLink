@@ -81,6 +81,7 @@ public class Bullet : MonoBehaviour
 	{
 		rb.simulated = false;
 		Explosion.SetActive(true);
+		MusicManager.Instance.playNoise_gun(5);
 		yield return new WaitForSeconds(time);
 		Destroy(gameObject);
 	}

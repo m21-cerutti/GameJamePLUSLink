@@ -38,6 +38,7 @@ public class PlayerShoot : MonoBehaviour
 		//Normal
 		if (shoot && timer < 0) {
 			Shoot(bullet, speed);
+			MusicManager.Instance.playNoise_gun(3);
 			timer = cadence;
 		}else if (timer >= 0)
 		{
@@ -48,6 +49,7 @@ public class PlayerShoot : MonoBehaviour
 		if (rocketShoot && timerRocket < 0)
 		{
 			Shoot(rocket, speedRocket);
+			MusicManager.Instance.playNoise_gun(4);
 			timerRocket = cadenceRocket;
 			nbRockets--;
 		}
