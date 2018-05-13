@@ -33,14 +33,17 @@ public class Bullet : MonoBehaviour
 				StartCoroutine(Explose(3f));
 				break;
 			}
-			else if (other.collider.tag == "Enemy") {
-				if (other.collider.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Static)
+			else {
+				if (other.collider.tag == "Enemy")
 				{
-					other.collider.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-				}
+					if (other.collider.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Static)
+					{
+						other.collider.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+					}
 					bulletDamage(other.collider, damage);
+				}
+				Destroy(gameObject);
 			}
-			Destroy(gameObject);
 		}
 		
 
