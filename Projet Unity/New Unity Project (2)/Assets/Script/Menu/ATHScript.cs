@@ -8,7 +8,13 @@ public class ATHScript : MonoBehaviour
 {
 	public GameObject player;
 	public RectTransform FillBoss;
+	public Text nbRockets;
 	float previous_life = 1f;
+
+	void Start()
+	{
+		nbRockets.text = "";
+	}
 
 	void FixedUpdate()
 	{
@@ -30,6 +36,7 @@ public class ATHScript : MonoBehaviour
 				FillBoss.localScale = new Vector3(life_boss, FillBoss.localScale.y, FillBoss.localScale.z);
 				previous_life = life_boss;
 			}
+			nbRockets.text = player.GetComponent<PlayerShoot>().getNbRockets().ToString();
 		}
 	}
 }

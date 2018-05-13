@@ -13,6 +13,7 @@ public class PlayerShoot : MonoBehaviour
 
 	private float timer;
 	private float timerRocket;
+	private static int nbRockets = 1;
 
 	/*
 	public enum Weapons
@@ -29,8 +30,7 @@ public class PlayerShoot : MonoBehaviour
 	void Update ()
 	{
 		shoot = Input.GetMouseButton(0);
-		rocketShoot = Input.GetMouseButton(1);
-
+		rocketShoot = Input.GetMouseButton(1) && (nbRockets > 0);
 	}
 
 	void FixedUpdate()
@@ -49,6 +49,7 @@ public class PlayerShoot : MonoBehaviour
 		{
 			Shoot(rocket, speedRocket);
 			timerRocket = cadenceRocket;
+			nbRockets--;
 		}
 		else if (timerRocket >= 0)
 		{
@@ -59,6 +60,16 @@ public class PlayerShoot : MonoBehaviour
 	public void machineGun(float speed)
 	{
 		cadence = speed;
+	}
+
+	public static void newRocket()
+	{
+		nbRockets++;
+	}
+
+	public int getNbRockets()
+	{
+		return nbRockets;
 	}
 
 	void Shoot(GameObject prefab, float speed)

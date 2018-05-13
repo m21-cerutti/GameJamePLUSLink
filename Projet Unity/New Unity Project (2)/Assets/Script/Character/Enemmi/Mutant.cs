@@ -7,7 +7,7 @@ public class Mutant : EnemyClass{
 	
 	public Vector3 startPosition;
 	public float speed;
-
+	public GameObject itemRocket;
 
 	Rigidbody2D rb;
 
@@ -24,6 +24,8 @@ public class Mutant : EnemyClass{
 	public override void die()
 	{
 		base.die();
+		if(Random.Range(0, 4) == 0)
+			Instantiate(itemRocket, transform.position, Quaternion.identity);
 		MusicManager.Instance.playNoise(0);
 	}
 
