@@ -35,7 +35,7 @@ public class PlayerMotor : CharacterObj {
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		nbEnemies = enemies.Length;
 		waitBulle = 45f;
-		phrases = new string[] { "CREVEZ !!" };
+		phrases = new string[] { "CREVEZ !!" , "LAISSEZ-MOI BOSSER !" , "NE ME TOUCHEZ PAS !"};
 	}
 	
 	// Update is called once per frame
