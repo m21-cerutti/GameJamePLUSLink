@@ -872,23 +872,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1849621788653428
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224851873609195998}
-  - component: {fileID: 222102488865147226}
-  - component: {fileID: 114081403751405734}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1853261905455098
 GameObject:
   m_ObjectHideFlags: 1
@@ -1399,39 +1382,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
---- !u!114 &114081403751405734
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1849621788653428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 50
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Pour vous d\xE9placer"
 --- !u!114 &114101287669782818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1716,7 +1666,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2219,14 +2169,22 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Marc CERUTTI
 
+    Programmer/artist
+
 
     Vincent AMEEUW
+
+    Programmer
 
 
     Alexandre SCIRE
 
+    Sound Designer
 
-    Jean GABRIEL'
+
+    Jean GABRIEL
+
+    Sound Designer'
 --- !u!114 &114356190415874960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2532,7 +2490,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 120
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3433,12 +3391,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1455471700426394}
---- !u!222 &222102488865147226
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1849621788653428}
 --- !u!222 &222119210844411356
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3857,10 +3809,10 @@ RectTransform:
   m_Father: {fileID: 224710559994204910}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0064449, y: -297.9}
-  m_SizeDelta: {x: 0.012939, y: -595.7}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -27.700012, y: -87.375}
+  m_SizeDelta: {x: 1478.8, y: 615.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224175376615661870
 RectTransform:
@@ -3959,7 +3911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1513.7086, y: -192.3}
+  m_AnchoredPosition: {x: 1219.5667, y: -192.3}
   m_SizeDelta: {x: 427.8, y: 384.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224195788319953610
@@ -4690,24 +4642,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224851873609195998
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1849621788653428}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 224863303681521190}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: -300}
-  m_SizeDelta: {x: 500, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224863303681521190
 RectTransform:
   m_ObjectHideFlags: 1
@@ -4723,13 +4657,12 @@ RectTransform:
   - {fileID: 224950996295936180}
   - {fileID: 224337500203413768}
   - {fileID: 224717346009943828}
-  - {fileID: 224851873609195998}
   m_Father: {fileID: 224143874902727780}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 893.5043, y: -192.3}
+  m_AnchoredPosition: {x: 746.43335, y: -192.3}
   m_SizeDelta: {x: 427.8, y: 384.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224872152238223530
