@@ -57,10 +57,10 @@ MonoBehaviour:
   audioNoisePrefab: {fileID: 1039502425279430, guid: 922fd40f59f4f6c4b9e7c6c51fdc1831,
     type: 2}
   win: 0
-  MainMenu: {fileID: 8300000, guid: afb52c7a192a9964fbd613e9bcc2854f, type: 3}
+  MainMenu: {fileID: 8300000, guid: 286c1499d84932343a03a35363cca834, type: 3}
   Game: {fileID: 8300000, guid: ccfaaab917f1d4d49b37d540fb48da64, type: 3}
   Noises:
   - clip: {fileID: 8300000, guid: 9f89e32f9225baa4daeedb7cc8a60c07, type: 3}
     important: 0
-  - clip: {fileID: 0}
-    important: 0
+  - clip: {fileID: 8300000, guid: c2429f2aa8fc98d42aad30f6cf4f3bb7, type: 3}
+    important: 1

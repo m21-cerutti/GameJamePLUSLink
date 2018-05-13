@@ -278,6 +278,19 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 217.7821
       objectReference: {fileID: 0}
+    - target: {fileID: 114352099430559558, guid: e5dd6f188292fb34c8d989feb074b652,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Marc CERUTTI
+
+
+        Vincent AMEEUW
+
+
+        Alexandre SCIRE
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5dd6f188292fb34c8d989feb074b652, type: 2}
   m_IsPrefabParent: 0
