@@ -25,6 +25,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	public GameObject ATHPanel;
 	public GameObject TutorialPanel;
 	public GameObject GameOverPanel;
+	public GameObject WinPanel;
 	public GameObject CreditPanel;
 	public GameObject LoadingObjects;
 	
@@ -148,7 +149,8 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 		ATHPanel.SetActive(false);
 		pausePanel.SetActive(false);
 		GameOverPanel.SetActive(false);
-		
+		WinPanel.SetActive(false);
+
 		Time.timeScale = 1f;
 		
 	}
@@ -210,13 +212,25 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public void GameOver()
 	{
-		HUDManager.Instance.GameOverPanel.SetActive(true);
+		GameOverPanel.SetActive(true);
 		state = stateMenu.GameOver;
 	}
 
 	public void BackGameOver()
 	{
-		HUDManager.Instance.GameOverPanel.SetActive(false);
+		GameOverPanel.SetActive(false);
+		state = stateMenu.Play;
+	}
+
+	public void Win()
+	{
+		WinPanel.SetActive(true);
+		state = stateMenu.Win;
+	}
+
+	public void BackWin()
+	{
+		WinPanel.SetActive(false);
 		state = stateMenu.Play;
 	}
 
