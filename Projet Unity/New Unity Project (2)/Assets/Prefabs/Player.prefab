@@ -322,6 +322,13 @@ MonoBehaviour:
   damage: 3
   invulnerability: 3
   bulle: {fileID: 1824309766248814}
+  phrases:
+  - LAISSEZ-MOI BOSSER !
+  - ME TOUCHEZ PAS !
+  - CREVEZ !!
+  - AHAHAH !!
+  - Sales mutansts de ***
+  number_clip: 0600000004000000030000000d000000
 --- !u!114 &114992847800531384
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -10,7 +10,8 @@ public class PlayerMotor : CharacterObj {
 	GameObject[] enemies;
 	public GameObject bulle;
 	float waitBulle;
-	string[] phrases;
+	public string[] phrases;
+	public int[] number_clip;
 
 	SpriteRenderer rend;
 
@@ -35,7 +36,6 @@ public class PlayerMotor : CharacterObj {
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		nbEnemies = enemies.Length;
 		waitBulle = 45f;
-		phrases = new string[] { "CREVEZ !!" , "LAISSEZ-MOI BOSSER !" , "NE ME TOUCHEZ PAS !"};
 	}
 	
 	// Update is called once per frame
@@ -58,15 +58,16 @@ public class PlayerMotor : CharacterObj {
 			waitBulle -= Time.deltaTime;
 		else
 		{
-			StartCoroutine(displayBulle(phrases[Random.Range(0, phrases.Length)]));
+			StartCoroutine(displayBulle(phrases[Random.Range(0, phrases.Length)], number_clip[Random.Range(0, number_clip.Length)]));
 			waitBulle = 45;
 		}
 	}
 
-	IEnumerator displayBulle(string phrase)
+	IEnumerator displayBulle(string phrase, int nbclip)
 	{
 		bulle.GetComponentInChildren<TextMesh>().text = phrase;
 		bulle.SetActive(true);
+		MusicManager.Instance.playNoise_player(nbclip);
 		yield return new WaitForSeconds(4f);
 		bulle.GetComponentInChildren<TextMesh>().text = "";
 		bulle.SetActive(false);
