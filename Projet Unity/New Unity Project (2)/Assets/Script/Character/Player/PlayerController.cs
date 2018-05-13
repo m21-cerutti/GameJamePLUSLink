@@ -8,16 +8,22 @@ public class PlayerController : MonoBehaviour
 
 	private float vertical;
 	private float horizontal;
+
+	Animator anim;
 	
 	void Start ()
 	{
 		player = GetComponent<Rigidbody2D>();
+		anim = GetComponent<Animator>();
 	}
 
 	void Update()
 	{
 		vertical = Input.GetAxis("Vertical");
 		horizontal = Input.GetAxis("Horizontal");
+
+		anim.SetFloat("Horizontal", horizontal);
+		anim.SetFloat("Vertical", vertical);
 	}
 
 	void FixedUpdate ()
