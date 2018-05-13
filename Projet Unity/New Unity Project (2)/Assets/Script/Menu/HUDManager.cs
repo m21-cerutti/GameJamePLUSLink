@@ -212,6 +212,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public void GameOver()
 	{
+		MusicManager.Instance.playNoise_player(11);
 		GameOverPanel.SetActive(true);
 		state = stateMenu.GameOver;
 	}
@@ -224,6 +225,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 
 	public void Win()
 	{
+		MusicManager.Instance.playNoise_player(14);
 		WinPanel.SetActive(true);
 		state = stateMenu.Win;
 	}

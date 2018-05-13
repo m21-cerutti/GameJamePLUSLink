@@ -328,7 +328,8 @@ MonoBehaviour:
   - CREVEZ !!
   - AHAHAH !!
   - Sales mutansts de ***
-  number_clip: 0600000004000000030000000d000000
+  numbers_clip_random: 0300000004000000060000000d000000
+  numbers_clip_aie: 0700000008000000090000000a000000
 --- !u!114 &114992847800531384
 MonoBehaviour:
   m_ObjectHideFlags: 1

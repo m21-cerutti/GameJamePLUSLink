@@ -11,8 +11,8 @@ public class PlayerMotor : CharacterObj {
 	public GameObject bulle;
 	float waitBulle;
 	public string[] phrases;
-	public int[] number_clip;
-
+	public int[] numbers_clip_random;
+	public int[] numbers_clip_aie;
 	SpriteRenderer rend;
 
 	public new void takeDamage(int dam)
@@ -22,6 +22,7 @@ public class PlayerMotor : CharacterObj {
 		{
 			base.takeDamage(dam);
 			timeinv = invulnerability;
+			MusicManager.Instance.playNoise_player(numbers_clip_aie[Random.Range(0, numbers_clip_random.Length)]);
 		}
 	}
 
@@ -58,7 +59,7 @@ public class PlayerMotor : CharacterObj {
 			waitBulle -= Time.deltaTime;
 		else
 		{
-			StartCoroutine(displayBulle(phrases[Random.Range(0, phrases.Length)], number_clip[Random.Range(0, number_clip.Length)]));
+			StartCoroutine(displayBulle(phrases[Random.Range(0, phrases.Length)], numbers_clip_random[Random.Range(0, numbers_clip_random.Length)]));
 			waitBulle = 45;
 		}
 	}
