@@ -3,10 +3,18 @@
 public class PlayerShoot : MonoBehaviour
 {
 	public GameObject bullet;
-	public float speed = 10f;
-	public float cadence = 0.3f;
-	private float timer;
+	public GameObject rocket;
 
+	public float speed = 15f;
+	public float speedRocket = 10f;
+
+	public float cadence = 0.3f;
+	public float cadenceRocket = 0.8f;
+
+	private float timer;
+	private float timerRocket;
+
+	/*
 	public enum Weapons
 	{
 		MP5,
@@ -14,29 +22,54 @@ public class PlayerShoot : MonoBehaviour
 		RocketLauncher,
 		C4
 	};
-
+	*/
 	private bool shoot;
-	
+	private bool rocketShoot;
+
 	void Update ()
 	{
 		shoot = Input.GetMouseButton(0);
+		rocketShoot = Input.GetMouseButton(1);
+
 	}
 
 	void FixedUpdate()
 	{
+		//Normal
 		if (shoot && timer < 0) {
-			Shoot();
+			Shoot(bullet, speed);
 			timer = cadence;
 		}else if (timer >= 0)
 		{
 			timer -= Time.deltaTime;
 		}
+
+		//Rocket
+		if (rocketShoot && timerRocket < 0)
+		{
+			Shoot(rocket, speedRocket);
+			timerRocket = cadenceRocket;
+		}
+		else if (timerRocket >= 0)
+		{
+			timerRocket -= Time.deltaTime;
+		}
 	}
 
-	void Shoot()
+	public void machineGun(float speed)
 	{
-		GameObject obj = Instantiate(bullet, transform.position + bullet.transform.position, Quaternion.identity);
-		obj.GetComponent<Rigidbody2D>().velocity = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x, 
-			Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y).normalized * speed;
+		cadence = speed;
+	}
+
+	void Shoot(GameObject prefab, float speed)
+	{
+		Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		Vector3 vect = mouse - transform.position;
+		float rot_z = Mathf.Atan2(vect.y, vect.x) * Mathf.Rad2Deg;
+		Quaternion rotation = Quaternion.Euler(0f, 0f, rot_z);
+
+		GameObject obj = Instantiate(prefab, transform.position + bullet.transform.position, rotation);
+
+		obj.GetComponent<Rigidbody2D>().velocity = new Vector3(mouse.x - transform.position.x,	mouse.y - transform.position.y).normalized * speed;
 	}
 }

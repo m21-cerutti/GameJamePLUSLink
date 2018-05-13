@@ -36,10 +36,12 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 		}
 	}
 
-	new void Awake ()
+
+	void Start()
 	{
-		base.Awake();
-		if (!GameObject.Find ("AudioBackground(Clone)")) {
+
+		if (!GameObject.Find("AudioBackground(Clone)"))
+		{
 			audioFond = Instantiate(audioFondPrefab).GetComponent<AudioSource>();
 			audioFond.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
 			audioFond.clip = MainMenu;
@@ -49,10 +51,7 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 			audioNoise = Instantiate(audioNoisePrefab).GetComponent<AudioSource>();
 			audioNoise.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
 		}
-	}
 
-	void Start()
-	{
 		audioFond.PlayDelayed(0.3f);
 	}
 
@@ -69,7 +68,7 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 		if (audioFond == null)
 		{
 
-			audioFond = Instantiate(audioNoisePrefab).GetComponent<AudioSource>();
+			audioFond = Instantiate(audioFondPrefab).GetComponent<AudioSource>();
 			audioFond.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
 
 		}
