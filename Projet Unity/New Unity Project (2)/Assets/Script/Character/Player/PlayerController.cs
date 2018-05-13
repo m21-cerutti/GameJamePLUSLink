@@ -29,5 +29,6 @@ public class PlayerController : MonoBehaviour
 	void FixedUpdate ()
 	{
 		player.velocity = new Vector2(horizontal, vertical) * speed;
+		anim.SetFloat("Speed", player.velocity.magnitude);
 	}
 }
