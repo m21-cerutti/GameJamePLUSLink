@@ -19,7 +19,6 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 	[SerializeField]
 	public Noise[] Noises;
 
-	bool priority = false;
 
 	[System.Serializable]
 	public struct Noise
@@ -34,7 +33,6 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 		{
 			audioNoise.clip = Noises[nb].clip;
 			audioNoise.Play();
-			priority = Noises[nb].important;
 		}
 	}
 
