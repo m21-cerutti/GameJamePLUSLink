@@ -34,9 +34,11 @@ public class TextDisplay : SingletonBehaviour<TextDisplay>
 			foreach (char c in sentence)
 			{
 				dialogueText.text += c;
-				yield return new WaitForSeconds(0.03f);
+				float waitc = Random.Range(0.03f, 0.08f);
+				yield return new WaitForSeconds(waitc);
 			}
-			yield return new WaitForSeconds(1f);
+			float waits = Random.Range(1f, 2f);
+			yield return new WaitForSeconds(waits);
 			dialogueText.text += '\n';
 		}
 	}
