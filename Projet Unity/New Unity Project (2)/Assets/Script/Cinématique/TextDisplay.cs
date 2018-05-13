@@ -11,11 +11,19 @@ public class TextDisplay : SingletonBehaviour<TextDisplay>
 	void Start ()
 	{
 		dialogueText.text = "";
+		dialogueText.color = Color.green;
+	}
+
+	void Update()
+	{
+		if (Input.anyKeyDown)
+			EndDialogue();
 	}
 
 	public void startDialogue(Dialogue dialogue)
 	{
 		dialogueText.text = "";
+		dialogueText.color = Color.green;
 		StartCoroutine(DisplaySentences(dialogue));
 	}
 
@@ -33,9 +41,9 @@ public class TextDisplay : SingletonBehaviour<TextDisplay>
 		}
 	}
 
-
 	void EndDialogue()
 	{
+		StopAllCoroutines();
 		dialogueText.text = "";
 		return;
 	}
