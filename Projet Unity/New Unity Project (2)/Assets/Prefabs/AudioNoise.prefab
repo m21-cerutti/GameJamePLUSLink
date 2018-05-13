@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1179273933653698}
+  m_RootGameObject: {fileID: 1039502425279430}
   m_IsPrefabParent: 1
---- !u!1 &1179273933653698
+--- !u!1 &1039502425279430
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4273340424488364}
-  - component: {fileID: 82606583193482908}
-  - component: {fileID: 169675425729338684}
+  - component: {fileID: 4334211393972300}
+  - component: {fileID: 82157063422896352}
+  - component: {fileID: 169511341849962588}
   m_Layer: 0
-  m_Name: AudioBackground
+  m_Name: AudioNoise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4273340424488364
+--- !u!4 &4334211393972300
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179273933653698}
+  m_GameObject: {fileID: 1039502425279430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,12 +41,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82606583193482908
+--- !u!82 &82157063422896352
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179273933653698}
+  m_GameObject: {fileID: 1039502425279430}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -54,7 +54,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.175
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -121,12 +121,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!169 &169675425729338684
+--- !u!169 &169511341849962588
 AudioLowPassFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179273933653698}
+  m_GameObject: {fileID: 1039502425279430}
   m_Enabled: 1
   serializedVersion: 3
   m_LowpassResonanceQ: 1
