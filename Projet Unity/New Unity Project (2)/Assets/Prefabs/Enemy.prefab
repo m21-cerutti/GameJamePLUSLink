@@ -214,6 +214,7 @@ MonoBehaviour:
   barlife: {fileID: 1273917439712588}
   startPosition: {x: 0.471, y: 1.82, z: 0}
   speed: 2
+  itemRocket: {fileID: 1353314200976176, guid: 5c92a478f6399e94fa8cdfa103231433, type: 2}
 --- !u!212 &212458648058506598
 SpriteRenderer:
   m_ObjectHideFlags: 1
