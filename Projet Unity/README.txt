@@ -2,7 +2,7 @@
 #	Nuclear Issues			#
 #					#
 #########################################
-CERUTTI_MARC-NuclearIssues
+
 
 Genre: Shooter 2D / Beat them up
 
