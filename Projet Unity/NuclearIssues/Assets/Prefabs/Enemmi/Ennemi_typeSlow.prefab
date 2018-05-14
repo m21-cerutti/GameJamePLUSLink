@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_life: 30
-  life: 15
+  life: 30
   damage: 15
   player: {fileID: 0}
   follow_player: 0

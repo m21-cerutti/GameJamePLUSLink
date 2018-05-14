@@ -306,6 +306,7 @@ MonoBehaviour:
   speedRocket: 6
   cadence: 0.3
   cadenceRocket: 1
+  nbRockets: 1
 --- !u!114 &114884618548518048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,8 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67e8cc7daf969e40901edec9f723435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_life: 10
-  life: 10
+  max_life: 15
+  life: 15
   damage: 3
   invulnerability: 3
   bulle: {fileID: 1824309766248814}

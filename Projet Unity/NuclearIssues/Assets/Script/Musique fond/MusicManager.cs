@@ -125,11 +125,7 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 		}
 		else
 		{
-			if (!audioFond.isPlaying)
-			{
-				audioFond.Play();
-			}
-
+			
 			if (HUDManager.Instance.state == stateMenu.Main  && audioFond.clip != MainMenu)
 			{
 				audioFond.Stop();
@@ -154,6 +150,11 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 			if (HUDManager.Instance.state == stateMenu.Win || HUDManager.Instance.state == stateMenu.GameOver)
 			{
 				audioFond.volume = Mathf.Lerp(audioFond.volume, 0f, 0.1f);
+			}
+
+			if (!audioFond.isPlaying)
+			{
+				audioFond.Play();
 			}
 		}
 	}
