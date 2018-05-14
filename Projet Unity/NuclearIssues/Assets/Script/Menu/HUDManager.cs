@@ -44,6 +44,10 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	{
 		base.Awake();
 
+		#if UNITY_WEBGL
+			buttonMain[3].gameObject.SetActive(false);
+		#endif
+
 		state = stateMenu.Main;
 		hotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
 
@@ -213,7 +217,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	public void GameOver()
 	{
 		Time.timeScale = 0f;
-		state = stateMenu.GameOver;
+		StartCoroutine(delayState(stateMenu.GameOver, 2f)); 
 		MusicManager.Instance.playNoise_player(12);
 		GameOverPanel.SetActive(true);
 		
@@ -229,7 +233,7 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 	public void Win()
 	{
 		Time.timeScale = 0f;
-		state = stateMenu.Win;
+		StartCoroutine(delayState(stateMenu.Win, 2f));
 		MusicManager.Instance.playNoise_player(14);
 		WinPanel.SetActive(true);
 		
@@ -240,6 +244,14 @@ public class HUDManager : SingletonBehaviour<HUDManager>
 		Time.timeScale = 1f;
 		WinPanel.SetActive(false);
 		state = stateMenu.Play;
+	}
+
+
+
+	IEnumerator delayState(stateMenu s, float time)
+	{
+		yield return new WaitForSecondsRealtime(time);
+		state = s;
 	}
 
 	/*

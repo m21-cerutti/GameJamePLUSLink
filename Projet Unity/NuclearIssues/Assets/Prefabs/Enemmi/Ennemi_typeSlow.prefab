@@ -168,7 +168,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 6
 --- !u!70 &70276597208830294
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -213,7 +213,7 @@ MonoBehaviour:
   follow_player: 0
   barlife: {fileID: 1332630528858368}
   startPosition: {x: 0.471, y: 1.82, z: 0}
-  speed: 1
+  speed: 2
   itemRocket: {fileID: 1353314200976176, guid: 5c92a478f6399e94fa8cdfa103231433, type: 2}
 --- !u!212 &212400950028317570
 SpriteRenderer:

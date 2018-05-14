@@ -104,14 +104,14 @@ public class MusicManager :  SingletonBehaviour<MusicManager>
 
 		if (audioNoise_gun == null)
 		{
-			audioNoise_gun = Instantiate(audioNoisePrefab).GetComponent<AudioSource>();
+			audioNoise_gun = Instantiate(audioNoisePrefab_gun).GetComponent<AudioSource>();
 			audioNoise_gun.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
 
 		}
 
 		if (audioNoise_player == null)
 		{
-			audioNoise_player = Instantiate(audioNoisePrefab).GetComponent<AudioSource>();
+			audioNoise_player = Instantiate(audioNoisePrefab_player).GetComponent<AudioSource>();
 			audioNoise_player.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
 
 		}

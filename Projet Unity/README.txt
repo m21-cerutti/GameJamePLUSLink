@@ -4,6 +4,10 @@
 #########################################
 
 
+Installation:
+Télécharger soit la version windows, soit la verion WEBGL.
+
+
 Genre: Shooter 2D / Beat them up
 
 Joueur : 1

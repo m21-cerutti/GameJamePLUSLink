@@ -1781,7 +1781,7 @@ MonoBehaviour:
   buttonPause:
   - {fileID: 114137844534044314}
   - {fileID: 114338623348616702}
-  state: 7
+  state: 0
   cursorTexture: {fileID: 2800000, guid: d9b71f2cfafcfa44b8b79f7216e8d20d, type: 3}
   cursorMode: 0
   hotSpot: {x: 165, y: 165}
